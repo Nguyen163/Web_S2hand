@@ -1,0 +1,7 @@
+django-crispy-forms
+django
+fontawesomefree
+Pillow
+asgiref
+pytz
+sqlparse

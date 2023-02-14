@@ -1,0 +1,135 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<!-- Content -->
+<div class="container position-relative text-center">
+    <div class="row py-5 g-5">
+        <div class="col-12 col-lg-6">
+            <img src="{% static 'images/store_page/products/beats_jy18ege_Ok08b8W.jpg' %}" data-bs-toggle="modal" data-bs-target="#imageModal"
+                class="m-1 w-100 sliderMainImage">
+            <div>
+                <img src="{% static 'images/details_page/blackbeast.png' %}" width="60" class="m-1" sliderThumb>
+                <img src="{% static 'images/details_page/red.png' %}" width="60" class="m-1" sliderThumb>
+                <img src="{% static 'images/details_page/white.png' %}" width="60" class="m-1" sliderThumb>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h2 id="productName">Headphones</h2>
+            <small class="text-muted">Article: 06892</small>
+            <h4 class="my-4">USD <span id="price">${{ product.price|floatformat:2 }}</span></h4>
+            <label for="selectSize" class="text-muted">Status:</label>
+            <select class="form-select" name="selectSize" id="size">
+                <option selected="">Old</option>
+            </select>
+            <div class="d-grid m-4">
+                <button data-product={{ product.id }} data-action="add" class="btn btn-lg btn-dark add-btn update-cart">Add to cart</button>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Description</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique amet repellat
+                            autem, obcaecati! Quia a non ab autem illum, dolor quidem, sed accusamus laudantium,
+                            eveniet, accusantium voluptatem ad ipsa.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Availability In Store</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique amet repellat
+                            autem, obcaecati! Quia a non ab autem illum, dolor quidem, sed accusamus laudantium,
+                            eveniet, accusantium voluptatem ad ipsa.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Delivery And Returns</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique amet repellat
+                            autem, obcaecati! Quia a non ab autem illum, dolor quidem, sed accusamus laudantium,
+                            eveniet, accusantium voluptatem ad ipsa.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                            <strong>Status</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit similique amet repellat
+                            autem, obcaecati! Quia a non ab autem illum, dolor quidem, sed accusamus laudantium,
+                            eveniet, accusantium voluptatem ad ipsa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="display-6 py-5 text-center">
+        You May Also Like
+    </h2>
+    <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row my-5">
+        <div class="card m-2">
+            <a href="{% url 'store' %}">
+                <img src="{% static 'images/details_page/img1.jpg' %}" class="card-img-top" height="300" alt="Product">
+            </a>
+            <div class="card-body">
+                <p class="card-text fw-bold">T-Shirt</p>
+                <small class="text-secondary" USD 449$></small>
+            </div>
+        </div>
+        <div class="card m-2">
+            <a href="{% url 'store' %}">
+                <img src="{% static 'images/details_page/kindle.png' %}" class="card-img-top" height="300" alt="Product">
+            </a>
+            <div class="card-body">
+                <p class="card-text fw-bold">Kindle</p>
+                <small class="text-secondary" USD 449$></small>
+            </div>
+        </div>
+        <div class="card m-2">
+            <a href="{% url 'store' %}">
+                <img src="{% static 'images/details_page/nintendo.png' %}" class="card-img-top" height="300" alt="Product">
+            </a>
+            <div class="card-body">
+                <p class="card-text fw-bold">Nintendo Switch</p>
+                <small class="text-secondary" USD 449$></small>
+            </div>
+        </div>
+        <div class="card m-2">
+            <a href="{% url 'store' %}">
+                <img src="{% static 'images/details_page/arduino.png' %}" class="card-img-top" height="300" alt="Product">
+            </a>
+            <div class="card-body">
+                <p class="card-text fw-bold">Arduino Uno</p>
+                <small class="text-secondary" USD 449$></small>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}
